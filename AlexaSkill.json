@@ -1,0 +1,145 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "mstr dashboards",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "Cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "what to ask",
+                        "what to do",
+                        "Help",
+                        "What can you do"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "end",
+                        "quit",
+                        "close",
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetValuefromMicroStrategy",
+                    "slots": [
+                        {
+                            "name": "Metric",
+                            "type": "AvailableMetrics",
+                            "samples": [
+                                "{Metric}",
+                                "I need {Metric}  ",
+                                "I want the value for {Metric}",
+                                "For metric {Metric}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "what's {Metric} value",
+                        "what's the value for {Metric}",
+                        "What's the {Metric}",
+                        "Show me my {Metric}",
+                        "How is the {Metric}",
+                        "Get value"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "AvailableMetrics",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "net income"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Employee Headcount",
+                                "synonyms": [
+                                    "Employees",
+                                    "employee"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Income"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cost"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Profit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Revenue"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "GetValuefromMicroStrategy",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Metric",
+                            "type": "AvailableMetrics",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.10899855066.931241706951"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.10899855066.931241706951",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which value do you want?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which metric do you need?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which metric?"
+                    }
+                ]
+            }
+        ]
+    }
+}
