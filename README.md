@@ -16,6 +16,7 @@ Instruction in Russian
 7. Поменять base_url, mstr_username, mstr_password, project_name, report_id в MicroConnect.py
 
 Запуск:
+
 0. Запустить сервер
 1. Запустить main.py
 2. Включить ngrok и создать тунель к локальному хосту (ngrok.exe http 5000)
